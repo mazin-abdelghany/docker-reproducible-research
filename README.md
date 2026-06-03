@@ -1,15 +1,16 @@
-Contents:  
-[Installing Docker](#installing-docker)  
-&emsp; [Docker Desktop](#docker-desktop)  
-&emsp; [Windows](#windows)  
-&emsp; [macOS](#macos)  
-&emsp; [Linux](#linux)  
-
 # Docker for reproducible research
 
 This repository is a companion to a tutorial for utilizing Docker to create containers for reproducible research with a focus on statistical methodology. Prior to the tutorial, please follow the below steps in preparation.
 
 For an introduction to how Docker works, I encourage you to review the [What is Docker?](https://docs.docker.com/get-started/docker-overview/) article in their documentation. Another excellent resource is their [Docker workshop](https://docs.docker.com/get-started/workshop/). Though this focuses on application development, it is still a nice review of the basic functionality of Docker.
+
+# Contents  
+[Installing Docker](#installing-docker)  
+&emsp; [Docker Desktop](#docker-desktop)  
+&emsp; [Windows](#windows)  
+&emsp; [macOS](#macos)  
+&emsp; [Linux](#linux)  
+[Docker for R](#docker-containers-for-r)
 
 # Installing Docker
 
@@ -100,3 +101,13 @@ To configure Docker to start on boot,
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 ```
+
+# Docker containers for R
+
+[The Rocker project](https://rocker-project.org/) is an open source repository with Docker containers that have many default R packages installed and are modular. An overview of the available images is [here](https://rocker-project.org/images/). 
+
+Give this a try by pulling an image of RStudio:
+```
+docker run --rm -ti -e PASSWORD=yourpassword -p 8787:8787 rocker/rstudio
+```
+and point your browser to `localhost:8787`. Log in with user/password `rstudio/yourpassword`.
