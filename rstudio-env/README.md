@@ -4,4 +4,13 @@ Navigate to this directory and run
 ```
 docker compose -f rstudio-compose.yaml up -d
 ```
-Once the command had completed, point the browser to `localhost:8787`. Type the username `rstudio` and the password `my-password-here`. RStudio should now be in front of you. Set the working directory to `/project` and then click the small arrow above the script window to navigate the file browser to this directory. You should be able to see the file contents of `research-example`.
+Once the command had completed:
+
+1. Point the browser to `localhost:8787`.
+2. Type the username `rstudio` and the password `my-password-here`.
+3. RStudio should now be in front of you.
+4. Set the working directory to `/project`.
+5. Click the small arrow above the script window to navigate the file browser to this directory.
+6. You should be able to see the file contents of `research-example`.
+
+If you'd like, you can run the RMarkdown file to see if everything works! We will discuss how all of this is made possible using Docker during the tutorial! :)
