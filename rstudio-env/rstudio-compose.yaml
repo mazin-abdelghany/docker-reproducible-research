@@ -11,7 +11,7 @@ services:
       - 8787:8787
     volumes:
       - type: bind
-        source: ..
+        source: ../research-example
         target: /project
     environment:
       - PASSWORD=my-password-here
