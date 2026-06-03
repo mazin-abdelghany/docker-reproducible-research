@@ -117,4 +117,5 @@ and point your browser to `localhost:8787`. Log in with user/password `rstudio/y
 Now that Docker is installed on your system, follow the following instructions prior to the tutorial, if possible.
 
 1. `git clone` the repository.
-2. 
+2. In Github, navigate to the `rstudio-env` file.
+3. Follow the instructions in the `README`.
