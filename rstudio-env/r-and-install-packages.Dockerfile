@@ -2,9 +2,12 @@
 FROM rocker/rstudio:latest
 
 # install packages of interest 
-RUN install2.r --error 
-     mvtnorm \
-     plotly \
+RUN install2.r --error \
+     simsurv \
+     survival \
+     survminer \
+     brms \
+     tidyverse 
 
 RUN Rscript -e 'install.packages("devtools", dependencies = TRUE)'
 
