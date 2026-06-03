@@ -10,7 +10,8 @@ For an introduction to how Docker works, I encourage you to review the [What is 
 &emsp; [Windows](#windows)  
 &emsp; [macOS](#macos)  
 &emsp; [Linux](#linux)  
-[Docker for R](#docker-containers-for-r)
+[Docker for R](#docker-containers-for-r)  
+[Getting started for tutorial](#getting-started-for-tutorial)
 
 # Installing Docker
 
@@ -117,5 +118,6 @@ and point your browser to `localhost:8787`. Log in with user/password `rstudio/y
 Now that Docker is installed on your system, follow the following instructions prior to the tutorial, if possible.
 
 1. `git clone` the repository.
-2. In Github, navigate to the `rstudio-env` file.
+2. In Github, navigate to the `rstudio-env` directory.
 3. Follow the instructions in the `README`.
+4. See you at the tutorial! :)
