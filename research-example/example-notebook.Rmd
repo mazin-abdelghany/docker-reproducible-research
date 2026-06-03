@@ -1,6 +1,6 @@
 ---
 title: "Survival Analysis: Simulation, Cox, Kaplan-Meier, and Bayesian brms"
-author: "Statistical Research Workflow"
+author: "Reproducible Research - Docker Workflow"
 date: "`r Sys.Date()`"
 output: html_document
 ---
@@ -22,7 +22,7 @@ library(tidyverse)
 set.seed(42)
 ```
 
-```
+```{r}
 # Create a baseline dataframe of covariates
 covariates <- data.frame(
   id = 1:200,
@@ -50,12 +50,12 @@ analysis_df <- merge(covariates, sim_data, by = "id") %>%
 head(analysis_df)
 ```
 
-```
+```{r}
 cox_fit <- coxph(Surv(time, status) ~ trt, data = analysis_df)
 summary(cox_fit)
 ```
 
-```
+```{r}
 km_fit <- survfit(Surv(time, status) ~ trt, data = analysis_df)
 
 ggsurvplot(
@@ -70,7 +70,7 @@ ggsurvplot(
 )
 ```
 
-```
+```{r}
 # Fit the Bayesian model
 # We set chains=2 and cores=2 for a faster compile time in this example
 brms_fit <- brm(
@@ -84,11 +84,11 @@ brms_fit <- brm(
 )
 ```
 
-```
+```{r}
 summary(brms_fit)
 ```
 
-```
+```{r}
 plot(brms_fit, pars = "b_trt")
 ```
 
