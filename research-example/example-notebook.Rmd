@@ -1,0 +1,95 @@
+---
+title: "Survival Analysis: Simulation, Cox, Kaplan-Meier, and Bayesian brms"
+author: "Statistical Research Workflow"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+# Ensure required packages are installed
+required_pkgs <- c("simsurv", "survival", "survminer", "brms", "tidyverse")
+new_pkgs <- required_pkgs[!(required_pkgs %in% installed.packages()[,"Package"])]
+if(length(new_pkgs)) install.packages(new_pkgs)
+
+library(simsurv)
+library(survival)
+library(survminer)
+library(brms)
+library(tidyverse)
+
+set.seed(42)
+```
+
+```
+# Create a baseline dataframe of covariates
+covariates <- data.frame(
+  id = 1:200,
+  trt = rbinom(200, 1, 0.5) # 1 = Treatment, 0 = Control
+)
+
+# Simulate survival times using a Weibull baseline hazard
+# lambdas = scale parameter, gammas = shape parameter
+sim_data <- simsurv(
+  dist = "weibull",
+  lambdas = 0.1,
+  gammas = 1.5,
+  betas = c(trt = -0.6), # True log hazard ratio
+  x = covariates,
+  maxt = 5 # Administrative censoring at 5 years
+)
+
+# Merge back the covariates and create a standard status indicator
+analysis_df <- merge(covariates, sim_data, by = "id") %>%
+  mutate(
+    status = status, # 1 = event, 0 = censored
+    time = eventtime
+  )
+
+head(analysis_df)
+```
+
+```
+cox_fit <- coxph(Surv(time, status) ~ trt, data = analysis_df)
+summary(cox_fit)
+```
+
+```
+km_fit <- survfit(Surv(time, status) ~ trt, data = analysis_df)
+
+ggsurvplot(
+  km_fit, 
+  data = analysis_df,
+  pval = TRUE, 
+  conf.int = TRUE,
+  risk.table = TRUE,
+  legend.labs = c("Control (0)", "Treatment (1)"),
+  palette = c("#E41A1C", "#377EB8"),
+  title = "Kaplan-Meier Survival Curves"
+)
+```
+
+```
+# Fit the Bayesian model
+# We set chains=2 and cores=2 for a faster compile time in this example
+brms_fit <- brm(
+  formula = time | cens(1 - status) ~ trt, 
+  data = analysis_df,
+  family = weibull(),
+  chains = 2,
+  cores = 2,
+  iter = 2000,
+  seed = 42
+)
+```
+
+```
+summary(brms_fit)
+```
+
+```
+plot(brms_fit, pars = "b_trt")
+```
+
+
