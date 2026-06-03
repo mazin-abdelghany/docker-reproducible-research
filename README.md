@@ -111,3 +111,10 @@ Give this a try by pulling an image of RStudio:
 docker run --rm -ti -e PASSWORD=yourpassword -p 8787:8787 rocker/rstudio
 ```
 and point your browser to `localhost:8787`. Log in with user/password `rstudio/yourpassword`.
+
+# Getting started for tutorial
+
+Now that Docker is installed on your system, follow the following instructions prior to the tutorial, if possible.
+
+1. `git clone` the repository.
+2. 
