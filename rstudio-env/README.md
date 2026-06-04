@@ -10,7 +10,7 @@ Once the command had completed:
 2. Type the username `rstudio` and the password `my-password-here`.
 3. RStudio should now be in front of you.
 4. Set the working directory to `/project`.
-5. Click the small arrow above the script window to navigate the file browser to this directory.
+5. Click the small arrow at the top of the console next to `R 4.6.0`.
 6. You should be able to see the file contents of `research-example`.
 
 If you'd like, you can run the RMarkdown file to see if everything works! We will discuss how all of this is made possible using Docker during the tutorial! :)
