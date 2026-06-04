@@ -1,6 +1,6 @@
 # Getting started with `docker compose`
 
-**Navigate to this directory and run:**
+**Navigate using `cd` to this directory on your local machine and run:**
 ```
 docker compose -f rstudio-compose.yaml up -d
 ```
