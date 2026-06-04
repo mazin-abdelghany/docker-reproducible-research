@@ -9,7 +9,7 @@ RUN install2.r --error \
      brms \
      tidyverse 
 
-RUN Rscript -e 'install.packages("devtools", dependencies = TRUE)'
+# RUN Rscript -e 'install.packages("devtools", dependencies = TRUE)'
 
 ## to install RStan, uncomment the below
 # RUN Rscript -e 'Sys.setenv(DOWNLOAD_STATIC_LIBV8 = 1)'
