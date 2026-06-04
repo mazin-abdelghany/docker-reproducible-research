@@ -15,7 +15,7 @@ For an introduction to how Docker works, I encourage you to review the [What is 
 
 # Installing Docker
 
-There are several options for installing Docker, and they vary based on the operating system. My personal preference is to use Docker from the command line using their command line interface (CLI) to manage containers and images. However, Docker also offers Docker Desktop, which is a one-click-install application that can be run on Mac, Linus, or Windows. Docker Desktop is a graphical user interface (GUI) for the same purpose. 
+There are several options for installing Docker, and they vary based on the operating system. My personal preference is to use Docker from the command line using their command line interface (CLI) to manage containers and images. However, Docker also offers Docker Desktop, which is a one-click-install application that can be run on Mac, Linux, or Windows. Docker Desktop is a graphical user interface (GUI) for the same purpose. 
 
 ## Docker Desktop
 
