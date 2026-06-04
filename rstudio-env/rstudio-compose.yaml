@@ -3,7 +3,7 @@ name: rstudio-w-packages
 services:
 
   r-studio:
-    image: rstudio-gsd
+    image: rstudio-example
     build:
       context: .
       dockerfile: r-and-install-packages.Dockerfile
