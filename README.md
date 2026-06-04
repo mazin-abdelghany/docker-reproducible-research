@@ -25,7 +25,7 @@ Because of my bias towards using the Docker CLI, I encourage tutorial attendees 
 
 ### Windows
 
-For those willing to dive into the Docker CLI, the first step is installing Windows Subsystem for Linux (WSL). WSL allows you to run a Linux environment on your Windows machine, without a separate virtual machine or dual booting. Follow this [installation tutorial](https://learn.microsoft.com/en-us/windows/wsl/install) to install WSL. Simply, open PowerShell and type
+For those willing to dive into the Docker CLI, the first step is installing Windows Subsystem for Linux (WSL). WSL allows you to run a Linux environment on your Windows machine without a separate virtual machine or dual booting. Follow this [installation tutorial](https://learn.microsoft.com/en-us/windows/wsl/install) to install WSL. Simply, open PowerShell and type
 ```
 wsl --install
 ```
