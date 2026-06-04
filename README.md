@@ -1,6 +1,6 @@
 # Docker for reproducible research
 
-This repository is a companion to a tutorial for utilizing Docker to create containers for reproducible research with a focus on statistical methodology. Prior to the tutorial, please follow the below steps in preparation.
+This repository is a companion to a tutorial for utilizing Docker to create containers for reproducible research. Prior to the tutorial, please follow the below steps in preparation.
 
 For an introduction to how Docker works, I encourage you to review the [What is Docker?](https://docs.docker.com/get-started/docker-overview/) article in their documentation. Another excellent resource is their [Docker workshop](https://docs.docker.com/get-started/workshop/). Though this focuses on application development, it is still a nice review of the basic functionality of Docker.
 
