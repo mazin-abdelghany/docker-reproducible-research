@@ -21,6 +21,8 @@ There are several options for installing Docker, and they vary based on the oper
 
 Because of my bias towards using the Docker CLI, I encourage tutorial attendees to following along using the command line. For those who are interested in installing Docker Desktop and following along with that application, feel free to do so using the installation instructions [here](https://docs.docker.com/desktop/). Be sure to install the application for the correct operating system. Note that if you have trouble with Docker Desktop, I may be less capable of helping as I am much less familiar with that method of using Docker.
 
+**If the below steps do not work for you, falling back to installing Docker Desktop may be best.**
+
 ## Docker daemon and client (CLI)
 
 ### Windows
